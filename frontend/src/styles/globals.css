@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --page-bg: #edf4f0;
+  --panel-soft: #dce8e1;
+  --surface: #ffffff;
+  --ink-900: #1f2c36;
+  --ink-700: #425469;
+  --ink-500: #738399;
+  --line: #d4dde3;
+  --line-strong: #bac7d0;
+  --brand: #00a64f;
+  --brand-strong: #048e46;
+  --brand-soft: #e4f7ec;
+  --focus: rgba(0, 166, 79, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Manrope', sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(1200px 480px at -10% -10%, #f4f9f6, transparent 60%),
+    radial-gradient(900px 360px at 100% -20%, #e7f4ee, transparent 55%),
+    var(--page-bg);
+  color: var(--ink-900);
+  line-height: 1.6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ecf2ef;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9db3a6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7f9688;
+}
+
+/* Custom Components */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-2.5 rounded-xl font-semibold transition-all duration-200;
+  background: var(--brand);
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 8px 18px rgba(0, 166, 79, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--brand-strong);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-2.5 rounded-xl font-semibold transition-all duration-200;
+  background: #294c62;
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 8px 16px rgba(41, 76, 98, 0.18);
+}
+
+.btn-secondary:hover {
+  background: #1f3c4f;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center px-6 py-2.5 rounded-xl font-semibold transition-all duration-200;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-700);
+  background: #fff;
+}
+
+.btn-outline:hover {
+  background: #f3f8f5;
+  border-color: #aab8c2;
+}
+
+.card {
+  @apply rounded-2xl p-6 transition-all duration-200;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 30px rgba(23, 54, 45, 0.07);
+}
+
+.card:hover {
+  box-shadow: 0 16px 32px rgba(23, 54, 45, 0.1);
+}
+
+.input-field {
+  @apply w-full px-4 py-3 rounded-xl transition-all duration-150;
+  border: 1px solid var(--line);
+  background: #f7faf8;
+  color: var(--ink-900);
+}
+
+.input-field::placeholder {
+  color: #8a99a8;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #7ec6a0;
+  box-shadow: 0 0 0 3px var(--focus);
+  background: #fff;
+}
+
+.label {
+  @apply block text-sm font-semibold mb-2;
+  color: var(--ink-700);
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.auth-shell {
+  @apply min-h-[calc(100vh-120px)] grid lg:grid-cols-2 rounded-3xl overflow-hidden;
+  border: 1px solid #d6e3dc;
+  background: var(--surface);
+}
+
+.auth-left {
+  @apply p-8 sm:p-10 lg:p-14 flex flex-col justify-center;
+  background: linear-gradient(160deg, #dfe9e4 0%, #d5e1db 100%);
+}
+
+.auth-left-plate {
+  @apply rounded-3xl mb-8 flex items-center justify-center;
+  min-height: 260px;
+  border: 1px solid #c6d8ce;
+  background: linear-gradient(145deg, #eef4f1 0%, #d9e5df 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.auth-right {
+  @apply p-8 sm:p-10 lg:p-14 flex items-center justify-center;
+  background: #f8fbf9;
+}
+
+.auth-card {
+  @apply w-full max-w-md;
+}
+
+.auth-tabs {
+  @apply flex items-center gap-6 text-lg font-semibold mb-6;
+}
+
+.auth-tab {
+  @apply pb-2 border-b-2 transition-colors duration-200;
+  color: #607488;
+  border-color: transparent;
+}
+
+.auth-tab-active {
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+.auth-social-btn {
+  @apply h-11 rounded-xl border flex items-center justify-center text-lg transition-colors duration-200;
+  border-color: var(--line);
+  color: #4b6075;
+  background: #fff;
+}
+
+.auth-social-btn:hover {
+  background: #f2f8f5;
+}
